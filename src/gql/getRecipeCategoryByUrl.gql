@@ -1,0 +1,10 @@
+query getRecipeCategoryByUrl($url: String!) {
+  getRecipeCategoryByUrl(url:$url) {    
+    id
+    url
+    name
+    description
+    keywords
+    text
+  }
+}

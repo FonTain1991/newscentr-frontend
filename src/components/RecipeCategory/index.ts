@@ -1,0 +1,1 @@
+export { List as RecipeCategory } from './List'

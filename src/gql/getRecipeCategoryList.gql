@@ -1,0 +1,6 @@
+query getRecipeCategory {
+  getRecipeCategory {
+    id
+    url
+  }
+}

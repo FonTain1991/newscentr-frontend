@@ -1,0 +1,12 @@
+query getBreadcrumb($params:String!) {
+  getBreadcrumb(params:$params) {
+    category {
+      name
+      url
+    }
+    post {
+      pageName
+      url
+    }
+  }
+}

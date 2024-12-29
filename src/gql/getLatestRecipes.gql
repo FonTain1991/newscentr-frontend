@@ -1,0 +1,12 @@
+query getLatestRecipes($cursor: String, $take: Float) {
+  getLatestRecipes(cursor:$cursor, take:$take) {
+    id
+    previewId
+    rubric {
+      url
+      name
+    }
+    pageName
+    url
+  }
+}

@@ -1,0 +1,14 @@
+query getPostCategories {
+  getPostCategories {    
+    id
+    url
+    name
+    parentId    
+    children {
+      id
+      url
+      name 
+      parentId   
+    }
+  }
+}

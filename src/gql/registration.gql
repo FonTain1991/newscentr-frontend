@@ -1,0 +1,5 @@
+mutation registration($auth:AuthRegistration!){
+  registration(auth:$auth){
+    id
+  }
+}

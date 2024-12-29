@@ -1,0 +1,12 @@
+query getPostByPostCategoryUrl($url:String!) {
+  getPostByPostCategoryUrl(url:$url) {    
+    id
+    previewId
+    rubric {
+      url
+      name
+    }
+    pageName
+    url
+  }
+}

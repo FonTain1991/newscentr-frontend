@@ -1,0 +1,5 @@
+query getCountPosts {
+  getCountPosts{
+    total
+  }
+}

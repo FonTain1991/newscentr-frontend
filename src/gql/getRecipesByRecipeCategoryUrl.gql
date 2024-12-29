@@ -1,0 +1,12 @@
+query getRecipesByRecipeCategoryUrl($url:String!) {
+  getRecipesByRecipeCategoryUrl(url:$url) {    
+    id
+    previewId
+    rubric {
+      url
+      name
+    }
+    pageName
+    url
+  }
+}

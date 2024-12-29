@@ -1,0 +1,1 @@
+export { List as MainRecipeLatest } from './List'

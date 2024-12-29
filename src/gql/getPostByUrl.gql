@@ -1,0 +1,23 @@
+query getPostByUrl($url:String!, $postCategoryUrl:String!) {
+  getPostByUrl(url:$url, postCategoryUrl:$postCategoryUrl) {
+    id
+    pageName
+    pageTitle
+    url
+    text
+    createdAt
+    updatedAt
+    isPublish
+    postCategoryId
+    keywords
+    description
+    previewId
+    previewAlt
+    previewTitle
+    rubric {
+      url
+      name
+    }
+    countSee
+  }
+}

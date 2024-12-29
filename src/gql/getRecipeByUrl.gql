@@ -1,0 +1,33 @@
+query getRecipeByUrl($url:String!, $recipeCategoryUrl:String!) {
+  getRecipeByUrl(url:$url, recipeCategoryUrl:$recipeCategoryUrl) {
+    id
+    pageName
+    pageTitle
+    url
+    text
+    createdAt
+    updatedAt
+    isPublish
+    recipeCategoryId
+    keywords
+    description
+    previewId
+    previewAlt
+    previewTitle
+    activeCookingTime
+    totalCookingTime
+    ingredients {
+      id
+      value
+      note
+      ingredient {
+        title
+      }
+    }
+    rubric {
+      url
+      name
+    }
+    countSee
+  }
+}

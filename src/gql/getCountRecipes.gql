@@ -1,0 +1,5 @@
+query getCountRecipes {
+  getCountRecipes{
+    total
+  }
+}

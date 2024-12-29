@@ -1,0 +1,12 @@
+query getLatestPosts($cursor: String, $take: Float) {
+  getLatestPosts(cursor:$cursor, take:$take) {
+    id
+    previewId
+    rubric {
+      url
+      name
+    }
+    pageName
+    url
+  }
+}

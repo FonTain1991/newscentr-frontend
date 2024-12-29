@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-center-bottom {
+  background-position: center bottom;
+}
+
+.post-text {
+  p {
+    @apply my-4 text-sm md:text-base text-justify md:text-left;
+  }
+}

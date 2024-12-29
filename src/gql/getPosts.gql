@@ -1,0 +1,9 @@
+query getPosts {
+  getPosts {
+    id
+    url
+    rubric {
+      url
+    }
+  }
+}
