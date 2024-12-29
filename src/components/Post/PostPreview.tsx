@@ -1,7 +1,7 @@
 'use client'
 
 import { API_IMAGES } from '@/constants'
-import { useGetPostByUrl, useGetRecipeByUrl } from '@/hooks'
+import { useGetPostByUrl } from '@/hooks'
 import { Fancybox } from '@fancyapps/ui'
 import '@fancyapps/ui/dist/fancybox/fancybox.css'
 import Image from 'next/image'

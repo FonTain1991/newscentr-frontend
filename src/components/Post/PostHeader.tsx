@@ -1,6 +1,6 @@
 'use client'
 
-import { useGetPostByUrl, useGetRecipeByUrl } from '@/hooks'
+import { useGetPostByUrl } from '@/hooks'
 import Link from 'next/link'
 import { memo } from 'react'
 

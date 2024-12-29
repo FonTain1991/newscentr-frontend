@@ -10,7 +10,7 @@ export type GetBreadcrumbQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetBreadcrumbQuery = { __typename?: 'Query', getBreadcrumb: { __typename?: 'Breadcrumb', category?: { __typename?: 'RecipeCategory', name: string, url: string } | null, post?: { __typename?: 'Recipe', pageName: string, url: string } | null } };
+export type GetBreadcrumbQuery = { __typename?: 'Query', getBreadcrumb: { __typename?: 'Breadcrumb', category?: { __typename?: 'PostCategory', name: string, url: string } | null, post?: { __typename?: 'Post', pageName: string, url: string } | null } };
 
 
 export const GetBreadcrumbDocument = gql`

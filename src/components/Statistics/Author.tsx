@@ -1,11 +1,11 @@
 'use client'
 
-import { useGetRecipeByUrl } from '@/hooks'
+import { useGetPostByUrl } from '@/hooks'
 import dayjs from 'dayjs'
 import { memo } from 'react'
 
 export const Author = memo(() => {
-  const recipe = useGetRecipeByUrl()
+  const recipe = useGetPostByUrl()
 
   return (
     <div className='text-xss'>

@@ -26,8 +26,8 @@ export type AuthRegistration = {
 
 export type Breadcrumb = {
   __typename?: 'Breadcrumb';
-  category?: Maybe<RecipeCategory>;
-  post?: Maybe<Recipe>;
+  category?: Maybe<PostCategory>;
+  post?: Maybe<Post>;
 };
 
 export type FileManager = {
@@ -50,72 +50,26 @@ export type FolderCreate = {
   parentId?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Ingredient = {
-  __typename?: 'Ingredient';
-  children?: Maybe<Array<Ingredient>>;
-  description?: Maybe<Scalars['String']['output']>;
-  iconId?: Maybe<Scalars['String']['output']>;
-  id: Scalars['String']['output'];
-  parentId?: Maybe<Scalars['String']['output']>;
-  previewAlt?: Maybe<Scalars['String']['output']>;
-  previewId?: Maybe<Scalars['String']['output']>;
-  previewTitle?: Maybe<Scalars['String']['output']>;
-  title: Scalars['String']['output'];
-};
-
-export type IngredientCreate = {
-  description?: InputMaybe<Scalars['String']['input']>;
-  iconId?: InputMaybe<Scalars['String']['input']>;
-  parentId?: InputMaybe<Scalars['String']['input']>;
-  previewAlt?: InputMaybe<Scalars['String']['input']>;
-  previewId?: InputMaybe<Scalars['String']['input']>;
-  previewTitle?: InputMaybe<Scalars['String']['input']>;
-  title: Scalars['String']['input'];
-};
-
-export type IngredientUpdate = {
-  description?: InputMaybe<Scalars['String']['input']>;
-  iconId?: InputMaybe<Scalars['String']['input']>;
-  id: Scalars['String']['input'];
-  parentId?: InputMaybe<Scalars['String']['input']>;
-  previewAlt?: InputMaybe<Scalars['String']['input']>;
-  previewId?: InputMaybe<Scalars['String']['input']>;
-  previewTitle?: InputMaybe<Scalars['String']['input']>;
-  title: Scalars['String']['input'];
-};
-
 export type Mutation = {
   __typename?: 'Mutation';
   createFolder: FileManager;
-  createIngredient?: Maybe<Ingredient>;
   createPost?: Maybe<Post>;
   createPostCategory?: Maybe<PostCategory>;
-  createRecipe?: Maybe<Recipe>;
-  createRecipeCategory?: Maybe<RecipeCategory>;
   recoveryPassword?: Maybe<Scalars['String']['output']>;
   registration: User;
   removeFile?: Maybe<Scalars['String']['output']>;
   setNewPassword?: Maybe<Scalars['String']['output']>;
   signIn: User;
   signOut: User;
-  updateIngredient?: Maybe<Ingredient>;
   updatePost?: Maybe<Post>;
   updatePostCategory?: Maybe<PostCategory>;
   updatePostCountSee?: Maybe<Array<Post>>;
-  updateRecipe?: Maybe<Recipe>;
-  updateRecipeCategory?: Maybe<RecipeCategory>;
-  updateRecipeCountSee?: Maybe<Array<Recipe>>;
   updateUser?: Maybe<User>;
 };
 
 
 export type MutationCreateFolderArgs = {
   folder: FolderCreate;
-};
-
-
-export type MutationCreateIngredientArgs = {
-  ingredient: IngredientCreate;
 };
 
 
@@ -126,16 +80,6 @@ export type MutationCreatePostArgs = {
 
 export type MutationCreatePostCategoryArgs = {
   category: PostCategoryCreate;
-};
-
-
-export type MutationCreateRecipeArgs = {
-  recipe: RecipeCreate;
-};
-
-
-export type MutationCreateRecipeCategoryArgs = {
-  category: RecipeCategoryCreate;
 };
 
 
@@ -167,11 +111,6 @@ export type MutationSignInArgs = {
 };
 
 
-export type MutationUpdateIngredientArgs = {
-  ingredient: IngredientUpdate;
-};
-
-
 export type MutationUpdatePostArgs = {
   post: PostUpdate;
 };
@@ -183,21 +122,6 @@ export type MutationUpdatePostCategoryArgs = {
 
 
 export type MutationUpdatePostCountSeeArgs = {
-  url: Scalars['String']['input'];
-};
-
-
-export type MutationUpdateRecipeArgs = {
-  recipe: RecipeUpdate;
-};
-
-
-export type MutationUpdateRecipeCategoryArgs = {
-  category: RecipeCategoryUpdate;
-};
-
-
-export type MutationUpdateRecipeCountSeeArgs = {
   url: Scalars['String']['input'];
 };
 
@@ -292,12 +216,8 @@ export type Query = {
   checkRecoveryToken?: Maybe<Scalars['String']['output']>;
   getBreadcrumb: Breadcrumb;
   getCountPosts: Post;
-  getCountRecipes: Recipe;
   getFileManagerAllParents?: Maybe<Array<FileManager>>;
-  getIngredientById?: Maybe<Ingredient>;
-  getIngredients?: Maybe<Array<Ingredient>>;
   getLatestPosts?: Maybe<Array<Post>>;
-  getLatestRecipes?: Maybe<Array<Recipe>>;
   getListByParentId?: Maybe<Array<FileManager>>;
   getPostById?: Maybe<Post>;
   getPostByPostCategoryUrl?: Maybe<Array<Post>>;
@@ -307,14 +227,6 @@ export type Query = {
   getPostCategoryById?: Maybe<PostCategory>;
   getPostCategoryByUrl?: Maybe<PostCategory>;
   getPosts?: Maybe<Array<Post>>;
-  getRecipeById?: Maybe<Recipe>;
-  getRecipeByUrl?: Maybe<Recipe>;
-  getRecipeCategories: Array<RecipeCategory>;
-  getRecipeCategory?: Maybe<Array<RecipeCategory>>;
-  getRecipeCategoryById?: Maybe<RecipeCategory>;
-  getRecipeCategoryByUrl?: Maybe<RecipeCategory>;
-  getRecipes?: Maybe<Array<Recipe>>;
-  getRecipesByRecipeCategoryUrl?: Maybe<Array<Recipe>>;
   me?: Maybe<User>;
 };
 
@@ -334,18 +246,7 @@ export type QueryGetFileManagerAllParentsArgs = {
 };
 
 
-export type QueryGetIngredientByIdArgs = {
-  id: Scalars['String']['input'];
-};
-
-
 export type QueryGetLatestPostsArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  take?: InputMaybe<Scalars['Float']['input']>;
-};
-
-
-export type QueryGetLatestRecipesArgs = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   take?: InputMaybe<Scalars['Float']['input']>;
 };
@@ -378,131 +279,6 @@ export type QueryGetPostCategoryByIdArgs = {
 
 
 export type QueryGetPostCategoryByUrlArgs = {
-  url: Scalars['String']['input'];
-};
-
-
-export type QueryGetRecipeByIdArgs = {
-  id: Scalars['String']['input'];
-};
-
-
-export type QueryGetRecipeByUrlArgs = {
-  recipeCategoryUrl: Scalars['String']['input'];
-  url: Scalars['String']['input'];
-};
-
-
-export type QueryGetRecipeCategoryByIdArgs = {
-  id: Scalars['String']['input'];
-};
-
-
-export type QueryGetRecipeCategoryByUrlArgs = {
-  url: Scalars['String']['input'];
-};
-
-
-export type QueryGetRecipesByRecipeCategoryUrlArgs = {
-  url: Scalars['String']['input'];
-};
-
-export type Recipe = {
-  __typename?: 'Recipe';
-  activeCookingTime?: Maybe<Scalars['DateTime']['output']>;
-  countSee: Scalars['Float']['output'];
-  createdAt?: Maybe<Scalars['DateTime']['output']>;
-  description: Scalars['String']['output'];
-  id: Scalars['String']['output'];
-  ingredients: Array<RecipeIngredient>;
-  isPublish: Scalars['Boolean']['output'];
-  keywords?: Maybe<Scalars['String']['output']>;
-  pageName: Scalars['String']['output'];
-  pageTitle: Scalars['String']['output'];
-  previewAlt?: Maybe<Scalars['String']['output']>;
-  previewId?: Maybe<Scalars['String']['output']>;
-  previewTitle?: Maybe<Scalars['String']['output']>;
-  recipeCategoryId: Scalars['String']['output'];
-  rubric: RecipeCategory;
-  text: Scalars['String']['output'];
-  total: Scalars['Float']['output'];
-  totalCookingTime?: Maybe<Scalars['DateTime']['output']>;
-  updatedAt?: Maybe<Scalars['DateTime']['output']>;
-  url: Scalars['String']['output'];
-};
-
-export type RecipeCategory = {
-  __typename?: 'RecipeCategory';
-  children: Array<RecipeCategory>;
-  description: Scalars['String']['output'];
-  id: Scalars['String']['output'];
-  keywords?: Maybe<Scalars['String']['output']>;
-  name: Scalars['String']['output'];
-  parentId?: Maybe<Scalars['String']['output']>;
-  text?: Maybe<Scalars['String']['output']>;
-  url: Scalars['String']['output'];
-};
-
-export type RecipeCategoryCreate = {
-  description: Scalars['String']['input'];
-  keywords?: InputMaybe<Scalars['String']['input']>;
-  name: Scalars['String']['input'];
-  parentId?: InputMaybe<Scalars['String']['input']>;
-  text?: InputMaybe<Scalars['String']['input']>;
-  url: Scalars['String']['input'];
-};
-
-export type RecipeCategoryUpdate = {
-  description: Scalars['String']['input'];
-  id: Scalars['String']['input'];
-  keywords?: InputMaybe<Scalars['String']['input']>;
-  name: Scalars['String']['input'];
-  parentId?: InputMaybe<Scalars['String']['input']>;
-  text?: InputMaybe<Scalars['String']['input']>;
-  url: Scalars['String']['input'];
-};
-
-export type RecipeCreate = {
-  activeCookingTime?: InputMaybe<Scalars['DateTime']['input']>;
-  description: Scalars['String']['input'];
-  ingredients?: InputMaybe<Scalars['String']['input']>;
-  isPublish?: InputMaybe<Scalars['Boolean']['input']>;
-  keywords?: InputMaybe<Scalars['String']['input']>;
-  pageName: Scalars['String']['input'];
-  pageTitle: Scalars['String']['input'];
-  previewAlt?: InputMaybe<Scalars['String']['input']>;
-  previewId?: InputMaybe<Scalars['String']['input']>;
-  previewTitle?: InputMaybe<Scalars['String']['input']>;
-  recipeCategoryId: Scalars['String']['input'];
-  text: Scalars['String']['input'];
-  totalCookingTime?: InputMaybe<Scalars['DateTime']['input']>;
-  url: Scalars['String']['input'];
-};
-
-export type RecipeIngredient = {
-  __typename?: 'RecipeIngredient';
-  id?: Maybe<Scalars['String']['output']>;
-  ingredient: Ingredient;
-  ingredientId: Scalars['String']['output'];
-  note?: Maybe<Scalars['String']['output']>;
-  value?: Maybe<Scalars['String']['output']>;
-};
-
-export type RecipeUpdate = {
-  activeCookingTime?: InputMaybe<Scalars['DateTime']['input']>;
-  description: Scalars['String']['input'];
-  id: Scalars['String']['input'];
-  ingredients?: InputMaybe<Scalars['String']['input']>;
-  isPublish?: InputMaybe<Scalars['Boolean']['input']>;
-  keywords?: InputMaybe<Scalars['String']['input']>;
-  pageName: Scalars['String']['input'];
-  pageTitle: Scalars['String']['input'];
-  previewAlt?: InputMaybe<Scalars['String']['input']>;
-  previewId?: InputMaybe<Scalars['String']['input']>;
-  previewTitle?: InputMaybe<Scalars['String']['input']>;
-  recipeCategoryId: Scalars['String']['input'];
-  text: Scalars['String']['input'];
-  totalCookingTime?: InputMaybe<Scalars['DateTime']['input']>;
   url: Scalars['String']['input'];
 };
 
