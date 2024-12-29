@@ -1,13 +1,11 @@
 'use client'
 
-import { useGetCountRecipesSuspenseQuery } from '@/gql/getCountRecipes'
-import { useGetLatestRecipesSuspenseQuery } from '@/gql/getLatestRecipes'
+import { useGetCountPostsSuspenseQuery } from '@/gql/getCountPosts'
+import { useGetLatestPostsSuspenseQuery } from '@/gql/getLatestPosts'
 import { useEvent } from '@/hooks'
 import { Button } from 'antd'
 import { memo } from 'react'
 import { Item } from './Item'
-import { useGetLatestPostsSuspenseQuery } from '@/gql/getLatestPosts'
-import { useGetCountPostsSuspenseQuery } from '@/gql/getCountPosts'
 
 export const List = memo(() => {
   const { data, fetchMore } = useGetLatestPostsSuspenseQuery()
@@ -27,7 +25,7 @@ export const List = memo(() => {
   return (
     <>
       <div className='mb-6'>
-        <h4 className='text-sm md:text-base px-3 pt-2 pb-1 w-max bg-blue-500 mt-12'>
+        <h4 className='text-sm md:text-base px-3 pt-2 pb-1 w-max bg-blue-500'>
           <span className='text-white leading-5 uppercase'>Последние блоги</span>
         </h4>
       </div>

@@ -1,20 +1,20 @@
 'use client'
 
-import { useGetRecipeCategoryByUrlSuspenseQuery } from '@/gql/getRecipeCategoryByUrl'
+import { useGetPostCategoryByUrlSuspenseQuery } from '@/gql/getPostCategoryByUrl'
 import { notFound, useParams } from 'next/navigation'
 
 export function useGetCategoryByUrl() {
-  const { recipeCategoryUrl } = useParams()
-  const { data } = useGetRecipeCategoryByUrlSuspenseQuery({
-    variables: { url: String(recipeCategoryUrl) },
-    skip: !recipeCategoryUrl
+  const { postCategoryUrl } = useParams()
+  const { data } = useGetPostCategoryByUrlSuspenseQuery({
+    variables: { url: String(postCategoryUrl) },
+    skip: !postCategoryUrl
   })
 
-  if (recipeCategoryUrl) {
+  if (postCategoryUrl) {
 
-    if (data?.getRecipeCategoryByUrl === null) {
+    if (data?.getPostCategoryByUrl === null) {
       notFound()
     }
-    return data?.getRecipeCategoryByUrl
+    return data?.getPostCategoryByUrl
   }
 }

@@ -1,6 +1,0 @@
-mutation updateRecipeCountSee($url:String!){
-  updateRecipeCountSee(url:$url) {
-    id
-    countSee
-  } 
-}

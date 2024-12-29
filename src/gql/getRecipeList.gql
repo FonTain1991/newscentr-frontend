@@ -1,9 +1,0 @@
-query getRecipes {
-  getRecipes {
-    id
-    url
-    rubric {
-      url
-    }
-  }
-}
