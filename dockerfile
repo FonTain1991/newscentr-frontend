@@ -1,5 +1,5 @@
 FROM node:20-alpine AS base
-
+RUN yarn config set network-timeout 600000 -g
 # Install dependencies only when needed
 FROM base AS deps
 RUN apk add --no-cache libc6-compat
