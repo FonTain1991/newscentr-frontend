@@ -6,7 +6,6 @@ import { ConfigProvider } from 'antd'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { cookies } from 'next/headers'
-import Script from 'next/script'
 import './globals.scss'
 
 
@@ -33,7 +32,7 @@ export default function RootLayout({
         <link rel='icon' href='/icon.png' type='image/png' sizes='any' />
       </head>
       <body className={`${inter.className} bg-main bg-center-bottom bg-no-repeat bg-fixed`}>
-        {process.env.NODE_ENV === 'production' && (
+        {/* {process.env.NODE_ENV === 'production' && (
           <Script
             id='gtm'
             strategy='afterInteractive'
@@ -47,7 +46,7 @@ export default function RootLayout({
             `
             }}
           />
-        )}
+        )} */}
         <ApolloProvider cookie={cookies().toString()}>
           <AntdRegistry>
             <ConfigProvider
@@ -70,13 +69,13 @@ export default function RootLayout({
             </ConfigProvider>
           </AntdRegistry>
         </ApolloProvider>
-        {process.env.NODE_ENV === 'production' && (
+        {/* {process.env.NODE_ENV === 'production' && (
           <noscript
             dangerouslySetInnerHTML={{
               __html: <iframe src='https://www.googletagmanager.com/ns.html?id=GTM-KL2TK9HC' height='0' width='0' style={{ display: 'none', visibility: 'hidden' }} loading='lazy' />
             }}
           />
-        )}
+        )} */}
       </body>
     </html>
   )
