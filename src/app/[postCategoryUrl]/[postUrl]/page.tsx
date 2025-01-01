@@ -46,7 +46,6 @@ export default function PostPage() {
       <div className='flex justify-center items-center mt-4 gap-4'>
         <Author />
         <Views />
-        {/* <Comments /> */}
       </div>
       <SocialShare />
       <div className='grid grid-cols-1 md:grid-cols-3 gap-x-0 md:gap-x-12 mt-12'>
