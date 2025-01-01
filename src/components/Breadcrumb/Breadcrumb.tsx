@@ -58,9 +58,7 @@ export const Breadcrumb = memo(() => {
 
   return (
     <div className='flex !mb-8 h-10 items-center'>
-      <ABreadcrumb
-        items={items}
-      />
+      <ABreadcrumb items={items} />
     </div>
   )
 })
