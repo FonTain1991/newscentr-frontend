@@ -35,12 +35,11 @@ export const Breadcrumb = memo(() => {
 
   const breadcrumb = data?.getBreadcrumb
   const items = useMemo(() => {
-    const prefix = postCategoryUrl ? '/blog' : ''
     const array = [{
       title: <Link href='/' className='text-[12px]'>Главная</Link>
     }, {
       title: breadcrumb?.post?.url
-        ? <Link href={`${prefix}/${breadcrumb?.category?.url}`} className='text-[12px]'>{breadcrumb?.category?.name}</Link>
+        ? <Link href={`/${breadcrumb?.category?.url}`} className='text-[12px]'>{breadcrumb?.category?.name}</Link>
         : breadcrumb?.category?.name
     }]
 
