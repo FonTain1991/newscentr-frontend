@@ -1,23 +1,17 @@
 
-import { FooterContacts } from '@/components/FooterContacts'
 import { Sidebar } from '@/components/Layout'
 import { MainPostLatest } from '@/components/MainPostLatest'
-import { MainSlider } from '@/components/Slider'
 
 
 export default function Home() {
   return (
-    <>
-      <MainSlider />
-      <div className='md:mt-12'>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-x-0 md:gap-x-12 mt-12'>
-          <div className='col-span-2'>
-            <MainPostLatest />
-          </div>
-          <Sidebar />
+    <div>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-x-0 md:gap-x-12'>
+        <div className='col-span-2'>
+          <MainPostLatest />
         </div>
+        <Sidebar />
       </div>
-      <FooterContacts />
-    </>
+    </div>
   )
 }

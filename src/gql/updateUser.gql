@@ -1,8 +1,0 @@
-mutation updateUser($user:UserUpdate!){
-  updateUser(user:$user){
-    id
-    firstName
-    lastName
-    avatar
-  }
-}

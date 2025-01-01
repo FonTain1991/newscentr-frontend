@@ -63,7 +63,7 @@ export type Mutation = {
   signOut: User;
   updatePost?: Maybe<Post>;
   updatePostCategory?: Maybe<PostCategory>;
-  updatePostCountSee?: Maybe<Array<Post>>;
+  updatePostCountSee?: Maybe<Post>;
   updateUser?: Maybe<User>;
 };
 
@@ -215,7 +215,7 @@ export type Query = {
   __typename?: 'Query';
   checkRecoveryToken?: Maybe<Scalars['String']['output']>;
   getBreadcrumb: Breadcrumb;
-  getCountPosts: Post;
+  getCountPosts?: Maybe<Post>;
   getFileManagerAllParents?: Maybe<Array<FileManager>>;
   getLatestPosts?: Maybe<Array<Post>>;
   getListByParentId?: Maybe<Array<FileManager>>;
@@ -227,6 +227,7 @@ export type Query = {
   getPostCategoryById?: Maybe<PostCategory>;
   getPostCategoryByUrl?: Maybe<PostCategory>;
   getPosts?: Maybe<Array<Post>>;
+  getPostsIsPublish?: Maybe<Array<Post>>;
   me?: Maybe<User>;
 };
 

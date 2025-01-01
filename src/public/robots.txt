@@ -1,5 +1,4 @@
 User-agent: *
 Disallow: /auth/*
 
-Host: https://gouranna.by
-#Sitemap: https://fanclaws.com/sitemap.xml
+Host: https://newscentr.com

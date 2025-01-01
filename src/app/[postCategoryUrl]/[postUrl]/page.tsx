@@ -1,12 +1,11 @@
 import { makeClient } from '@/apollo'
 import { Breadcrumb } from '@/components/Breadcrumb'
-import { FooterContacts } from '@/components/FooterContacts'
 import { Sidebar } from '@/components/Layout'
 import { PostBody, PostHeader, PostPreview } from '@/components/Post'
-import { MainSlider } from '@/components/Slider'
 import { SocialShare } from '@/components/SocialShare'
+import { Author, Views } from '@/components/Statistics'
 import { GetPostByUrlDocument } from '@/gql/getPostByUrl'
-import { GetPostsDocument } from '@/gql/getPosts'
+import { GetPostsIsPublishDocument } from '@/gql/getPostsIsPublish'
 
 export async function generateMetadata({ params }: { params: any }) {
   const client = makeClient({ cookie: null })
@@ -23,16 +22,16 @@ export async function generateMetadata({ params }: { params: any }) {
   }
 }
 
-export const revalidate = 60 * 1000
+export const revalidate = 60
 export const dynamicParams = true
 
 export async function generateStaticParams() {
   const client = makeClient({ cookie: null })
   const { data } = await client.query({
-    query: GetPostsDocument
+    query: GetPostsIsPublishDocument
   })
 
-  const posts = data?.getPosts
+  const posts = data?.getPostsIsPublish
   return posts.map((post: any) => ({
     postUrl: String(post.url),
     postCategoryUrl: String(post.rubric.url)
@@ -42,13 +41,12 @@ export async function generateStaticParams() {
 export default function PostPage() {
   return (
     <>
-      <MainSlider />
       <Breadcrumb />
       <PostHeader />
       <div className='flex justify-center items-center mt-4 gap-4'>
-        {/* <Author />
-        <Views /> 
-        <Comments /> */}
+        <Author />
+        <Views />
+        {/* <Comments /> */}
       </div>
       <SocialShare />
       <div className='grid grid-cols-1 md:grid-cols-3 gap-x-0 md:gap-x-12 mt-12'>
@@ -60,7 +58,6 @@ export default function PostPage() {
         </div>
         <Sidebar />
       </div>
-      <FooterContacts />
     </>
   )
 }

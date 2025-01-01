@@ -31,7 +31,7 @@ export default function RootLayout({
       <head>
         <link rel='icon' href='/icon.png' type='image/png' sizes='any' />
       </head>
-      <body className={`${inter.className} bg-main bg-center-bottom bg-no-repeat bg-fixed`}>
+      <body className={`${inter.className} bg-center-bottom bg-no-repeat bg-fixed`}>
         {/* {process.env.NODE_ENV === 'production' && (
           <Script
             id='gtm'
@@ -59,8 +59,8 @@ export default function RootLayout({
               <div className='sm:max-w-full md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto flex flex-col h-screen xl:h-[calc(100vh-2.5rem)] xl:mt-10 shadow-main bg-white'>
                 <Header />
                 <div className='grow bg-white'>
-                  <TopMenu />
-                  <div className='mx-4 md:mx-12 h-[calc(100%-2.5rem)]'>
+                  {/* <TopMenu /> */}
+                  <div className='mx-4 md:mx-12 h-[calc(100%-2.5rem)] mt-4'>
                     {children}
                   </div>
                 </div>

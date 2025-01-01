@@ -8,7 +8,7 @@ const defaultOptions = {} as const;
 export type GetCountPostsQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type GetCountPostsQuery = { __typename?: 'Query', getCountPosts: { __typename?: 'Post', total: number } };
+export type GetCountPostsQuery = { __typename?: 'Query', getCountPosts?: { __typename?: 'Post', total: number } | null };
 
 
 export const GetCountPostsDocument = gql`

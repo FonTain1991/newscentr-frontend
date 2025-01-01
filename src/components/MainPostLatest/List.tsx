@@ -24,11 +24,6 @@ export const List = memo(() => {
 
   return (
     <>
-      <div className='mb-6'>
-        <h4 className='text-sm md:text-base px-3 pt-2 pb-1 w-max bg-blue-500'>
-          <span className='text-white leading-5 uppercase'>Последние блоги</span>
-        </h4>
-      </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
         {list?.map((post: any) => (
           <Item

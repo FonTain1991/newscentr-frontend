@@ -62,7 +62,7 @@ export type PostCategoryFieldPolicy = {
 	text?: FieldPolicy<any> | FieldReadFunction<any>,
 	url?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type QueryKeySpecifier = ('checkRecoveryToken' | 'getBreadcrumb' | 'getCountPosts' | 'getFileManagerAllParents' | 'getLatestPosts' | 'getListByParentId' | 'getPostById' | 'getPostByPostCategoryUrl' | 'getPostByUrl' | 'getPostCategories' | 'getPostCategory' | 'getPostCategoryById' | 'getPostCategoryByUrl' | 'getPosts' | 'me' | QueryKeySpecifier)[];
+export type QueryKeySpecifier = ('checkRecoveryToken' | 'getBreadcrumb' | 'getCountPosts' | 'getFileManagerAllParents' | 'getLatestPosts' | 'getListByParentId' | 'getPostById' | 'getPostByPostCategoryUrl' | 'getPostByUrl' | 'getPostCategories' | 'getPostCategory' | 'getPostCategoryById' | 'getPostCategoryByUrl' | 'getPosts' | 'getPostsIsPublish' | 'me' | QueryKeySpecifier)[];
 export type QueryFieldPolicy = {
 	checkRecoveryToken?: FieldPolicy<any> | FieldReadFunction<any>,
 	getBreadcrumb?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -78,6 +78,7 @@ export type QueryFieldPolicy = {
 	getPostCategoryById?: FieldPolicy<any> | FieldReadFunction<any>,
 	getPostCategoryByUrl?: FieldPolicy<any> | FieldReadFunction<any>,
 	getPosts?: FieldPolicy<any> | FieldReadFunction<any>,
+	getPostsIsPublish?: FieldPolicy<any> | FieldReadFunction<any>,
 	me?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type UserKeySpecifier = ('avatar' | 'email' | 'firstName' | 'id' | 'lastName' | 'login' | 'now' | 'password' | UserKeySpecifier)[];

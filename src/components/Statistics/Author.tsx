@@ -5,11 +5,11 @@ import dayjs from 'dayjs'
 import { memo } from 'react'
 
 export const Author = memo(() => {
-  const recipe = useGetPostByUrl()
+  const post = useGetPostByUrl()
 
   return (
     <div className='text-xss'>
-      By <span className='text-green-600'>Gouranna</span> - {dayjs(recipe?.createdAt).format('MMMM DD, YYYY')}
+      By <span className='text-green-600'>Gouranna</span> - {dayjs(post?.createdAt).format('MMMM DD, YYYY')}
     </div>
   )
 })

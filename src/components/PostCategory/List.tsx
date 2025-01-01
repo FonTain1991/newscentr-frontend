@@ -21,7 +21,7 @@ export const List = memo(() => {
         key: menu.url,
         label: (
           <Link
-            href={`/blog/${menu.url}`}
+            href={`/${menu.url}`}
             className={`hover:underline ${[parentKey, postCategoryUrl].includes(menu.url) ? 'text-blue' : 'text-black'}`}
           >{menu.name}</Link>
         ),
@@ -30,7 +30,7 @@ export const List = memo(() => {
             key: subMenu.url,
             label: (
               <Link
-                href={`/blog/${subMenu.url}`}
+                href={`/${subMenu.url}`}
                 className={`hover:underline ${postCategoryUrl === menu.url ? 'text-blue' : 'text-black'}`}
               >{subMenu.name}</Link>
             )

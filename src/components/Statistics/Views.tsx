@@ -1,22 +1,24 @@
 'use client'
 
+import { useUpdatePostCountSeeMutation } from '@/gql/updatePostCountSee'
 import { useGetPostByUrl } from '@/hooks'
 import { EyeOutlined } from '@ant-design/icons'
 import { Tooltip } from 'antd'
-import { memo } from 'react'
+import { useParams } from 'next/navigation'
+import { memo, useEffect } from 'react'
 
 export const Views = memo(() => {
-  // const { postUrl } = useParams()
+  const { postUrl } = useParams()
   const post = useGetPostByUrl()
-  // const [action] = useUpdateRecipeCountSeeMutation()
+  const [action] = useUpdatePostCountSeeMutation()
 
-  // useEffect(() => {
-  //   action({
-  //     variables: {
-  //       url: String(recipeUrl)
-  //     }
-  //   })
-  // }, [recipeUrl, action])
+  useEffect(() => {
+    action({
+      variables: {
+        url: String(postUrl)
+      }
+    })
+  }, [postUrl, action])
 
   return (
     <Tooltip title='Количество просмотрев'>

@@ -1,10 +1,8 @@
 import { makeClient } from '@/apollo'
 import { Breadcrumb } from '@/components/Breadcrumb'
 import { CategoryHeader } from '@/components/Category'
-import { FooterContacts } from '@/components/FooterContacts'
 import { Sidebar } from '@/components/Layout'
 import { List } from '@/components/PostsByPostCategoryUrl'
-import { MainSlider } from '@/components/Slider'
 import { GetPostCategoriesDocument } from '@/gql/getPostCategories'
 import { GetPostCategoryByUrlDocument } from '@/gql/getPostCategoryByUrl'
 
@@ -26,7 +24,7 @@ export async function generateMetadata({ params }: { params: any }) {
   }
 }
 
-export const revalidate = 60 * 1000
+export const revalidate = 60
 export const dynamicParams = true
 
 export async function generateStaticParams() {
@@ -45,7 +43,6 @@ export async function generateStaticParams() {
 export default function PostCategoryPage() {
   return (
     <>
-      <MainSlider />
       <Breadcrumb />
       <CategoryHeader />
       <div className='grid grid-cols-1 md:grid-cols-3 gap-x-0 md:gap-x-12 mt-12'>
@@ -54,7 +51,6 @@ export default function PostCategoryPage() {
         </div>
         <Sidebar />
       </div>
-      <FooterContacts />
     </>
   )
 }

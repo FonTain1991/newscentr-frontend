@@ -1,0 +1,6 @@
+mutation updatePostCountSee($url:String!){
+  updatePostCountSee(url:$url) {
+    id
+    countSee
+  } 
+}

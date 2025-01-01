@@ -1,5 +1,5 @@
-query getPosts {
-  getPosts {
+query getPostsIsPublish {
+  getPostsIsPublish {
     id
     url
     rubric {

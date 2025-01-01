@@ -11,9 +11,6 @@ const config: Config = {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
-      backgroundImage: {
-        'main': 'url(\'../public/images/bg.webp\')',
-      },
       boxShadow: {
         'main': '0 0 20px 0 rgba(0, 0, 0, 0.1)',
       },
